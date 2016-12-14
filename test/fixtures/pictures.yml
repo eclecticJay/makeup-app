@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  makeup_artist_id: MyString
+  client_id: MyString
+  photos: MyString
+
+two:
+  makeup_artist_id: MyString
+  client_id: MyString
+  photos: MyString
