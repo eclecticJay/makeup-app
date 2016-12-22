@@ -10,25 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211200752) do
+ActiveRecord::Schema.define(version: 20161218213203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.string   "client_id"
-    t.string   "makeup_artist_id"
     t.string   "location"
     t.string   "time"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "client_id"
+    t.integer  "makeup_artist_id"
   end
 
   create_table "artist_specialties", force: :cascade do |t|
-    t.string   "makeup_artist_id"
-    t.string   "specialty_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "makeup_artist_id"
+    t.integer  "specialty_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -39,13 +39,14 @@ ActiveRecord::Schema.define(version: 20161211200752) do
     t.string   "zipcode"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "phone"
   end
 
   create_table "inventories", force: :cascade do |t|
-    t.string   "makeup_id"
-    t.string   "makeup_artist_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "makeup_id"
+    t.integer  "makeup_artist_id"
   end
 
   create_table "makeup_artists", force: :cascade do |t|
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20161211200752) do
     t.string   "zipcode"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "phone"
   end
 
   create_table "makeups", force: :cascade do |t|
@@ -66,11 +68,11 @@ ActiveRecord::Schema.define(version: 20161211200752) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.string   "makeup_artist_id"
-    t.string   "client_id"
     t.string   "photos"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "makeup_artist_id"
+    t.integer  "client_id"
   end
 
   create_table "specialties", force: :cascade do |t|
