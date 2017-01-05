@@ -1,1 +1,14 @@
 <h3>Welcome Ready to look your best </h3>
+<strong>Last Appointment</strong>
+<!-- Michelle Phan(spanish rose) -->
+<!-- Nitraa B(Purple Glitter Smokey Eye) -->
+<!-- Samantha and Nic Chapman / Pixiwoo(Angelina Jolie Makeup Tutorial) -->
+<!-- Lisa Eldridge(Marilyn Monroe - Iconic Makeup Look) -->
+<!-- Kandee Johnson(How To Do Pin-Up Girl Make-Up) -->
+<!-- Wayne Goss /grossmakeupartist(Selena Gomez Makeup Tutorial) -->
+<p><%= @artist.full_name%></p>
+<a href="">Book Again?</a>
+<p><%= @appointments.last.date.to_formatted_s(:long) %></p>
+<p><%=@appointments.last.time.strftime("%I:%M %p")%></p>
+
+Set your appointment

@@ -36,13 +36,29 @@
 		client_id: "1",
 		makeup_artist_id: "1",
 		location: "Queens",
-		time: "7:30am",
+		time: "12:30:00",
+		date: "2016-12-24"
+		}),
+	appointments = Appointment.create({
+		client_id: "1",
+		makeup_artist_id: "1",
+		location: "Queens",
+		time: "12:30:00",
+		date: "2016-12-23"
+		}),
+	appointments = Appointment.create({
+		client_id: "2",
+		makeup_artist_id: "2",
+		location: "Queens",
+		time: "10:30:00",
+		date: "2016-12-23"
 		}),
 	appointments = Appointment.create({
 		client_id: "2",
 		makeup_artist_id: "2",
 		location: "Bronx",
-		time: "12:00pm",
+		time: "16:30:00",
+		date: "2016-12-23"
 		}),
 	specialties = Specialty.create({
 		specialty: "Prom"

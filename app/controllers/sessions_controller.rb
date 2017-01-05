@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       if client && client.authenticate(params[:password])
         session[:client_id] = client.id
         flash[:success] = 'Successfully logged in!'
-        redirect_to '/'
+        redirect_to '/clientshome'
       else
         flash[:warning] = 'Invalid email or password!'
         redirect_to '/login'
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       if client && client.authenticate(params[:password])
         session[:client_id] = client.id
         flash[:success] = 'Successfully logged in!'
-        redirect_to '/'
+        redirect_to '/artistshome'
       else
         flash[:warning] = 'Invalid email or password!'
         redirect_to '/login'

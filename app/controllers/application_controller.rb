@@ -1,11 +1,21 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+     if session[:client_id]
+      @current_client ||= Client.find_by(id: session[:client_id]) 
+     elsif session[:makeup_artist_id]
+      @current_makeup_artist ||= MakeupArtist.find_by(id: session[:makeup_artist_id]) 
+    end 
   end
-  helper_method :current_user
+  helper_method :current_client
+  helper_method :current_makeup_artist
 
   def authenticate_user!
     redirect_to '/login' unless current_user
   end
 end
+
+
+  
+
+  

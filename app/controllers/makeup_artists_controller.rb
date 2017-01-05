@@ -1,7 +1,12 @@
 class MakeupArtistsController < ApplicationController
 	
   def index
-    @makeup_artists = MakeupArtist.all 
+    @current_makeup_artist = MakeupArtist.find(session[:makeup_artist_id])
+    @appointments = @current_makeup_artist.appointments.order(:date)
+    @client = @current_makeup_artist.clients
+    @inventory = @current_makeup_artist.inventories
+    specialty = @current_makeup_artist.artstis_specialties
+ 
   end
 
   def new

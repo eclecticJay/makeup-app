@@ -1,7 +1,10 @@
 class ClientsController < ApplicationController
 	
   def index
-    
+    @current_client = Client.find(session[:client_id])
+    @appointments = @current_client.appointments.order(:date)
+    @picture = @current_client.pictures
+    @artist = @current_client.makeup_artists.last
   end
 
   def new
