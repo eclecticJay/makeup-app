@@ -6,17 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-	clients = Client.create({first_name: "Maylin ",
+	clients = Client.create({first_name: "Sophia",
 	last_name: "Rodriguez",
 	zipcode: "10458",
-	email: "may.lin@gmail.com",
-	password: "may"
+	email: "sophiar@gmail.com",
+	password: "sophia"
 	}),
-	clients = Client.create({first_name: "Maykeline ",
-	last_name: "Rodriguez",
+	clients = Client.create({first_name: "Emma",
+	last_name: "Stone",
 	zipcode: "10458",
-	email: "may.keline@gmail.com",
-	password:"mayk"
+	email: "emmas@gmail.com",
+	password:"emma"
 	}),
 	makeup_artists = MakeupArtist.create({
 	first_name: "Natasha",

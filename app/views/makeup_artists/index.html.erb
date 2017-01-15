@@ -1,6 +1,23 @@
 <h3>Welcome Artists </h3>
-<p>Let make them beatiful today!</p>
-<% @makeup_artists.each do |makeupartist| %>
-<p><%=makeupartist.first_name %></p>
-<p><%=makeupartist.last_name %></p>
+
+<% @pending_appointments.each do |pending_appointment| %>
+<p><%=pending_appointment.location%></p>
+<p><%=pending_appointment.date%></p>
+<p><%=pending_appointment.time%></p>
+<p><%=pending_appointment.confirmation%></p>
+
+<%= form_tag "/appointments/#{pending_appointment.id}", method: :patch do %>
+<%= hidden_field_tag(:confirmation, "yes") %>
+<%= submit_tag "Yes" %>
 <% end %>
+<%= form_tag "/appointments/#{pending_appointment.id}", method: :patch do %>
+<%= hidden_field_tag(:confirmation, "no") %>
+<%= submit_tag "No" %>
+<% end %>
+<%= form_tag "/appointments/#{pending_appointment.id}", method: :patch do %>
+<%= hidden_field_tag(:confirmation, "pending") %>
+<%= submit_tag "Maybe" %>
+<% end %>
+<% end %>
+
+
