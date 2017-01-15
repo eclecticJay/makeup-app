@@ -20,4 +20,14 @@
 <% end %>
 <% end %>
 
+<%= month_calendar partial: 'simple_calendar/calendar', events: @appointments do |date, appointments| %>
+  <%= date.day %>
+
+  <% appointments.each do |appointment| %>
+    <div>
+      <%= @clients.find(appointment.client_id).full_name %>
+    </div>
+  <% end %>
+<% end %>
+
 
