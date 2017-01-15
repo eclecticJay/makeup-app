@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # MakeupArtist
   get '/artistshome' => 'makeup_artists#index'
   get '/makeup_artists/signup' => 'makeup_artists#new'
-	post '/makeup_artists' => 'makeup_artists#create'	
+	post '/makeup_artists' => 'makeup_artists#create'
   #Appointments
   get '/appointments' => 'appointments#new'
   post '/appointments' => 'appointments#create'
@@ -18,4 +18,8 @@ Rails.application.routes.draw do
 	get '/login' => 'sessions#new'
 	post '/login' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'
+  #Message
+  get '/messages' => 'messages#index'
+  get '/messages/new' => 'messages#new'
+  post '/messages' => 'messages#create'
 end

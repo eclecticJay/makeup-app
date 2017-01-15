@@ -16,5 +16,6 @@ class AppointmentsController < ApplicationController
   def update
     @appointment = Appointment.find_by( id: params["id"])
     @appointment.update(confirmation: params[:confirmation])
+    redirect_to '/artistshome'
   end
 end

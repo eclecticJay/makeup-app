@@ -6,7 +6,8 @@ class MakeupArtist < ApplicationRecord
 	has_many :makeups, through: :inventories
 	has_many :artist_specialties
 	has_many :specialties, through: :artist_specialties
-	has_many :pictures 
+	has_many :pictures
+  has_many :messages 
     def full_name
       first_name + ' ' + last_name
     end
