@@ -5,7 +5,8 @@ class MakeupArtistsController < ApplicationController
     @appointments = @current_makeup_artist.appointments.order(:date)
     @client = @current_makeup_artist.clients
     @inventory = @current_makeup_artist.inventories
-    specialty = @current_makeup_artist.artstis_specialties
+    @specialty = @current_makeup_artist.artist_specialties
+    @pending_appointments = @current_makeup_artist.appointments.where(confirmation:"pending")
  
   end
 
@@ -33,4 +34,3 @@ class MakeupArtistsController < ApplicationController
     end
   end
 end
-
