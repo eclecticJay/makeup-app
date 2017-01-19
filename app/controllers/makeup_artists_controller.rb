@@ -9,6 +9,12 @@ class MakeupArtistsController < ApplicationController
     @pending_appointments = @current_makeup_artist.appointments.where(confirmation:"pending")
   end
 
+  def messages
+    @current_makeup_artist = MakeupArtist.find(session[:makeup_artist_id])
+    @artist_messages = @current_makeup_artist.messages
+    render 'messages.html.erb'
+  end
+
   def new
     render 'new.html.erb'
   end
@@ -26,7 +32,7 @@ class MakeupArtistsController < ApplicationController
     if makeup_artist.save
       session[:makeup_artist_id] = makeup_artist.id
       flash[:success] = 'Successfully created account!'
-      redirect_to '/artistshome'
+      redirect_to '/artists_home'
     else
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/makeup_artist/signup'

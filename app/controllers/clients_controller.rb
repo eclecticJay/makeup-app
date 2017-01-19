@@ -7,6 +7,12 @@ class ClientsController < ApplicationController
     @artist = @current_client.makeup_artists.last
   end
 
+  def messages
+    @current_client = Client.find(session[:client_id])
+    @client_messages = @current_client.messages
+    render 'messages.html.erb'
+  end
+
   def new
     render 'new.html.erb'
   end
@@ -24,7 +30,7 @@ class ClientsController < ApplicationController
     if client.save
       session[:client_id] = client.id
       flash[:success] = 'Successfully created account!'
-      redirect_to '/clientshome'
+      redirect_to '/clients_home'
     else
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/clients/signup'

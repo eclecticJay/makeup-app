@@ -1,0 +1,15 @@
+<h3>Hello this is your inbox</h3>
+
+<% @artist_messages.each do |message| %>
+<p><%= message.client.full_name%></p>
+<p><%= message.text %></p>
+<%= form_tag "/messages", method: :post do %>
+   <div><%= hidden_field_tag :client, message.client_id %></div>
+    <%= text_area :text, "" %>
+   </div>
+   <div>
+    <%= submit_tag 'Send Message!' %>
+   </div>
+<% end %>
+<hr>
+<% end %>

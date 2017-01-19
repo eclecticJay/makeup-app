@@ -4,9 +4,17 @@
 <p><%= @artist.full_name%></p>
 
 <div>
- <a href="/appointments">Set your appointment today !</a> 
+ <a href="/appointments">Set your appointment today</a> 
 </div>
 
+<% if @appointments[-1].confirmation == "yes" %>
+  <p><%= @appointments[-1].makeup_artist.full_name%> has accepted your appointment keep in contact for futher details</p>
+<% end %>
+
+<% if @appointments[-1].confirmation == "no" %>
+  <p><%= @appointments[-1].makeup_artist.full_name%> could not accept your appointment at the moment see if you could reschedule</p>
+<% end %>
+<a href="/clients_inbox">Message</a>
 
 <div ng-app="app">
   {{ 1 + 1 }}

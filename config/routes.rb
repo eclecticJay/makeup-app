@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # Home
   get '/home' => 'home#index'
   # MakeupArtist
-  get '/artistshome' => 'makeup_artists#index'
+  get '/artists_home' => 'makeup_artists#index'
+  get '/artists_inbox' => 'makeup_artists#messages'
   get '/makeup_artists/signup' => 'makeup_artists#new'
 	post '/makeup_artists' => 'makeup_artists#create'
   #Appointments
@@ -11,7 +12,8 @@ Rails.application.routes.draw do
   post '/appointments' => 'appointments#create'
   patch '/appointments/:id' => 'appointments#update'
   # Client
-  get '/clientshome' => 'clients#index'
+  get '/clients_home' => 'clients#index'
+  get '/clients_inbox' => 'clients#messages'
   get '/clients/signup' => 'clients#new'
 	post '/clients' => 'clients#create'
   # Login 
@@ -19,7 +21,9 @@ Rails.application.routes.draw do
 	post '/login' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'
   #Message
-  get '/messages' => 'messages#index'
   get '/messages/new' => 'messages#new'
+  get '/messages/:id' => 'messages#show'
   post '/messages' => 'messages#create'
+  #Inventory 
+  
 end

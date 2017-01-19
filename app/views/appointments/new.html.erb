@@ -1,5 +1,6 @@
 <h2>Appointment Booking</h2>
-<%= form_tag '/appointments', method: :post do %>
+  <div>
+  <%= form_tag '/appointments', method: :post do %>
  <div><%= collection_select :makeup_artist, :makeup_artist_id,  MakeupArtist.all, :id, :full_name %></div>
  <div>
     <%= label_tag :location %>
@@ -17,3 +18,4 @@
    <%=submit_tag "book" %>
  </div>
  <%end%>
+ </div>
