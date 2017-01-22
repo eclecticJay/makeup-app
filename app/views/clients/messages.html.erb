@@ -1,6 +1,6 @@
 <h3>Hello this is your inbox</h3>
 
-<% @client_messages.each do |message| %>
+<% @client_messages[0..3].each do |message| %>
 <p><%= message.makeup_artist.full_name%></p>
 <p><%= message.text %></p>
 <%= form_tag "/messages", method: :post do %>

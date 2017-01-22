@@ -25,7 +25,7 @@
 
   <% appointments.each do |appointment| %>
     <div>
-      <%= @clients.find(appointment.client_id).full_name %>
+      <%= link_to @clients.find(appointment.client_id).full_name, "/appointments_show/#{appointment.id}"  %>
     </div>
   <% end %>
 <% end %>

@@ -7,9 +7,8 @@ class ApplicationController < ActionController::Base
       @current_makeup_artist ||= MakeupArtist.find_by(id: session[:makeup_artist_id]) 
     end 
   end
-  helper_method :current_client
-  helper_method :current_makeup_artist
-
+  helper_method :current_user
+ 
   def authenticate_user!
     redirect_to '/login' unless current_user
   end

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get '/makeup_artists/signup' => 'makeup_artists#new'
 	post '/makeup_artists' => 'makeup_artists#create'
   #Appointments
-  get '/appointments' => 'appointments#new'
+  get '/appointments_show/:id' => 'appointments#show'
+  get '/appointments/new' => 'appointments#new'
   post '/appointments' => 'appointments#create'
   patch '/appointments/:id' => 'appointments#update'
   # Client
