@@ -1,2 +1,7 @@
 <h3> Unread Messages</h3>
-
+<% if @current_artist %>
+<p><%= @current_artist.messages.last %></p>
+<% end %>
+<% if @current_client %>
+<p><%= @current_client.messages.last %></p>
+<% end %>

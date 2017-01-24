@@ -26,5 +26,14 @@ Rails.application.routes.draw do
   get '/messages/:id' => 'messages#show'
   post '/messages' => 'messages#create'
   #Inventory 
-  
+  get '/inventories' => 'inventories#index'
+  get '/inventories/new' => 'inventories#new'
+  post 'inventories' => 'inventories#create'
+  delete '/inventories/:id' =>'inventories#destroy'
+  #Makeup
+  get '/makeups' => 'makeups#index'
+  get '/makeups/new' => 'makeups#new'
+  get '/makeups/:id' => 'makeups#show'
+  post '/makeups' => 'makeups#create'
+  delete '/makeups/:id' =>'makeups#destroy'
 end

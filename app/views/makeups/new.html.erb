@@ -1,0 +1,19 @@
+<h3>Add items for your appointment</h3>
+<%= form_tag '/makeups', method: :post do %>
+<div>
+    <%= label_tag :makeup_items %>
+    <%= text_field_tag :makeup_items %>
+</div>
+
+<div>
+    <%= label_tag :makeup_tools %>
+    <%= text_field_tag :makeup_tools %>
+</div>
+
+<div>
+<%=submit_tag "Add" %>
+</div>
+
+<p><a href="/makeups">Ready</a><p>
+
+<% end %>

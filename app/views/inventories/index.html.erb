@@ -1,0 +1,9 @@
+<h3><%= @current_makeup_artist.full_name %>'s</h3>
+<h3>Current Inventory </h3>
+
+<div>
+<% @items.each do |item|%>
+<p><%=item.makeup_items%></p>
+<p><%=item.makeup_tools%></p>
+<% end %>
+</div>

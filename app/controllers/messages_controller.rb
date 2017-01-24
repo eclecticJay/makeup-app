@@ -21,6 +21,8 @@ class MessagesController < ApplicationController
   end
 
   def create
+    p "this is where this text is "
+    p params[:text][0]
     if(session[:makeup_artist_id])
       if params[:client].class != String
         the_client_id = params[:client][:client_id]
@@ -31,7 +33,7 @@ class MessagesController < ApplicationController
       @message = Message.new(
       makeup_artist_id: (session[:makeup_artist_id]),
       client_id: the_client_id,
-      text: params[:text]
+      text: params[:text][0]
     )
     @message.save
     end
@@ -45,10 +47,11 @@ class MessagesController < ApplicationController
       @message = Message.new(
       makeup_artist_id: the_makeup_artist_id,
       client_id: (session[:client_id]) ,
-      text: params[:text]
+      text: params[:text][0]
     )
     @message.save
     end
+    
   end
 end
 
