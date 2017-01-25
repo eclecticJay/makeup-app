@@ -51,7 +51,12 @@ class MessagesController < ApplicationController
     )
     @message.save
     end
-    
+    if(session[:makeup_artist_id])
+    redirect_to '/artists_inbox'
+    end
+    if(session[:client_id])
+    redirect_to '/clients_inbox'
+    end
   end
 end
 
