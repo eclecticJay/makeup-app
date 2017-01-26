@@ -4,6 +4,10 @@ class MakeupsController < ApplicationController
     @items = Makeup.all
   end
 
+  def profile
+    @current_makeup_artist = MakeupArtist.find(session[:makeup_artist_id])
+  end
+  
   def new
     render 'new.html.erb'
   end

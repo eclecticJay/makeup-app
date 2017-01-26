@@ -1,32 +1,63 @@
-<h1>Signup!</h1>
+<h2><strong>New Client</strong></h2>
 <%= form_tag '/clients', method: :post do  %>
-  <div>
-    <%= label_tag :first_name %>
-    <%= text_field_tag :first_name %>
+  <div class="row">
+    <div class= "col-md-4">
+      <%= label_tag :first_name %>
+      <br>
+      <%= text_field_tag :first_name %>
+    </div>  
   </div>
-   <div>
-    <%= label_tag :last_name %>
-    <%= text_field_tag :last_name %>
+
+  <div class="row">
+    <div class= "col-md-4">
+      <%= label_tag :last_name %> 
+      <br>
+      <%= text_field_tag :last_name %>
+    </div>  
   </div>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+
+  <div class="row">
+    <div class= "col-md-4">
+      <%= label_tag :email %> 
+      <br>
+      <%= text_field_tag :email %>
+    </div>  
   </div>
-  <div>
-    <%= label_tag :phone %>
-    <%= text_field_tag :phone %>
+
+  <div class="row">
+    <div class= "col-md-4">
+      <%= label_tag :phone %>
+      <br> 
+      <%= text_field_tag :phone %>
+    </div>  
   </div>
-  <div>
-    <%= label_tag :zipcode %>
-    <%= text_field_tag :zipcode %>
+
+  <div class="row">
+    <div class= "col-md-4">
+      <%= label_tag :zipcode %>
+      <br>  
+      <%= text_field_tag :zipcode %>
+    </div>  
   </div>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+
+  <div class = "row">
+    <div class= "col-md-4">
+      <%= label_tag :password %>
+      <br>
+      <%= password_field_tag :password %>
+    </div>
   </div>
+
+  <div class = "row">
+    <div class= "col-md-4">
+      <%= label_tag :password_confirmation %>
+      <br>
+      <%= password_field_tag :password_confirmation %>
+    </div>
+  </div>
+
   <div>
-    <%= label_tag :password_confirmation %>
-    <%= password_field_tag :password_confirmation %>
+  <%= submit_tag "Submit", :class => "btn btn-info" %>
   </div>
   <%= submit_tag "Submit" %>
 <% end %>

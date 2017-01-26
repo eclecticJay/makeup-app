@@ -5,7 +5,7 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find_by( id: params["id"])
-     @current_client = Client.find(session[:client_id])
+     @current_client = Client.find_by(id: session[:client_id])
     render 'show.html.erb'
   end
 
