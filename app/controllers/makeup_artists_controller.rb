@@ -9,6 +9,13 @@ class MakeupArtistsController < ApplicationController
     @pending_appointments = @current_makeup_artist.appointments.where(confirmation:"pending")
   end
 
+  def profile
+    @current_makeup_artist = MakeupArtist.find(session[:makeup_artist_id])
+    render 'profile.html.erb'
+    @mail = @current_makeup_artist.email
+    @specialty = @current_makeup_artist.artist_specialties
+  end
+
   def messages
     @current_makeup_artist = MakeupArtist.find(session[:makeup_artist_id])
     @artist_messages = @current_makeup_artist.messages

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # Home
   get '/home' => 'home#index'
   # MakeupArtist
-  get 'makeup_artists_profile' => 'makeup_artists#profile'
+  get '/makeup_artists_profile' => 'makeup_artists#profile'
   get '/artists_home' => 'makeup_artists#index'
   get '/artists_inbox' => 'makeup_artists#messages'
   get '/makeup_artists/signup' => 'makeup_artists#new'

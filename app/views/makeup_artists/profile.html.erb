@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+       <div class="well profile">
+            <div class="col-sm-12">
+                <div class="col-xs-12 col-sm-8">
+                    <h2><%= @current_makeup_artist.full_name %></h2>
+                    <p><strong>About: </strong> Makeup Artist</p>
+                    <p><strong>Email: </strong><%= @current_makeup_artist.email %></p>
+                    <p><strong>Bio: </strong><% @current_makeup_artist.bio %></p>
+                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+                    <p><strong>Skills: </strong>
+                        <span class="tags">prom</span>,  
+                        <span class="tags">bridal</span>, 
+                        <span class="tags">special event</span>, 
+                        <span class="tags">special effects</span>
+                    </p>
+                </div>             
+                <div class="col-xs-12 col-sm-4 text-center">
+                    <figure>
+                        <img src="<%= @current_makeup_artist.pictures[0].photos %>" alt="" class="img-circle img-responsive">
+                        <figcaption class="ratings">
+                            <p>Ratings
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                            <a href="#">
+                                 <span class="fa fa-star-o"></span>
+                            </a> 
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>            
+            <div class="col-xs-12 divider text-center">
+                <div class="col-xs-12 col-sm-4 emphasis">                   
+                    <div class="btn-group dropup btn-block">
+                      <button type="button" class="btn btn-info"><span class="fa fa-gear"></span> Options </button>
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu text-left" role="menu">
+                        <li><a href="/"><span class="fa fa-envelope pull-right"></span> Send a message </a></li>
+                        <li class="divider"></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+       </div>                 
+    </div>
+  </div>
+</div>

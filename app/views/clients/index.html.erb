@@ -1,24 +1,28 @@
 <h3>Welcome Ready to look your best, </h3>
 <h4><%=@current_client.full_name%>!</h4>
-<strong>Last Appointment</strong>
-<p><%= @artist.full_name%></p>
 
-<div>
- <a href="/appointments/new">Set your appointment today</a> 
+<div class ="row">
+
+<div class="col-md-6">
+  <strong>Last Appointment</strong>
+  <p><%= @artist.full_name%></p>
+  <a href="/appointments/new">Set your appointment today</a> 
 </div>
 
-<% if @appointments[-1].confirmation == "yes" %>
-  <p><%= @appointments[-1].makeup_artist.full_name%> has accepted your appointment keep in contact for futher details</p>
-<% end %>
+<div class="col-md-6"><strong>Pending Appointments</strong>
+  <% if @appointments[-1].confirmation == "yes" %>
+    <p><%= @appointments[-1].makeup_artist.full_name%> has accepted your appointment keep in contact for futher details</p>
+  <% end %>
 
-<% if @appointments[-1].confirmation == "no" %>
-  <p><%= @appointments[-1].makeup_artist.full_name%> could not accept your appointment at the moment see if you could reschedule</p>
-<% end %>
-<a href="/clients_inbox">Message</a>
-
-<div ng-app="app">
-  {{ 1 + 1 }}
+  <% if @appointments[-1].confirmation == "no" %>
+    <p><%= @appointments[-1].makeup_artist.full_name%> could not accept your appointment at the moment see if you could reschedule</p>
+  <% end %>
+  <a href="/clients_inbox">Message</a>
 </div>
+
+</div>
+
+
 
 <!-- Michelle Phan(spanish rose) -->
 <!-- Nitraa B(Purple Glitter Smokey Eye) -->
@@ -26,3 +30,5 @@
 <!-- Lisa Eldridge(Marilyn Monroe - Iconic Makeup Look) -->
 <!-- Kandee Johnson(How To Do Pin-Up Girl Make-Up) -->
 <!-- Wayne Goss /grossmakeupartist(Selena Gomez Makeup Tutorial) -->
+
+
