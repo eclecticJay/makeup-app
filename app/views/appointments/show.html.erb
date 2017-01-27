@@ -1,6 +1,8 @@
 <h3>Appointment Info</h3>
 <p><%= @appointment.client.full_name%></p>
-<p><%= @appointment.time%></p>
+<p><%= @appointment.location%></p>
+<p><%= @appointment.time.strftime("%I:%M %p")%></p>
+
 
 
 
