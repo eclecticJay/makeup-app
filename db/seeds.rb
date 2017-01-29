@@ -41,42 +41,58 @@
 	last_name: "Matos",
 	zipcode: "11101",
 	email: "mariliam@gmail.com",
-	password: "tasha"
+	password: "mari",
+	bio:"Dominican-American teacher that loves make up so much decided to freelance in her free time"
 	}),
 	makeup_artist = MakeupArtist.create({
 	first_name: "Ashley",
 	last_name: "Vinasco",
 	zipcode: "10467",
 	email: "ashley_vinasco@yahoo.com",
-	password: "ashcash"
+	password: "ashcash",
+	bio: "Young inspired city girl that is taking the makeup world by storm"
 	}),
 	appointments = Appointment.create({
 		client_id: "1",
 		makeup_artist_id: "1",
 		location: "Queens",
 		time: "12:30:00",
-		date: "2016-1-15"
-		}),
-	appointments = Appointment.create({
-		client_id: "1",
-		makeup_artist_id: "1",
-		location: "Queens",
-		time: "12:30:00",
-		date: "2016-1-20"
+		date: "2017-1-15"
 		}),
 	appointments = Appointment.create({
 		client_id: "2",
+		makeup_artist_id: "1",
+		location: "Queens",
+		time: "12:30:00",
+		date: "2017-1-20"
+		}),
+	appointments = Appointment.create({
+		client_id: "3",
+		makeup_artist_id: "1",
+		location: "Bronx",
+		time: "16:30:00",
+		date: "2017-1-13"
+		}),
+	appointments = Appointment.create({
+		client_id: "1",
 		makeup_artist_id: "2",
 		location: "Queens",
 		time: "10:30:00",
-		date: "2016-1-10"
+		date: "2017-1-10"
 		}),
 	appointments = Appointment.create({
 		client_id: "2",
 		makeup_artist_id: "2",
 		location: "Bronx",
 		time: "16:30:00",
-		date: "2016-1-13"
+		date: "2017-1-13"
+		}),
+	appointments = Appointment.create({
+		client_id: "3",
+		makeup_artist_id: "2",
+		location: "Bronx",
+		time: "12:30:00",
+		date: "2017-1-13"
 		}),
 	specialties = Specialty.create({
 		specialty: "Prom"
